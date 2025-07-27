@@ -5,7 +5,7 @@ metadata:
   labels:
     app: vprodb
 spec:
-  replica: 1
+  replicas: 1
   selector:
     matchLabels:
       app: vprodb
@@ -21,7 +21,7 @@ spec:
           - mountPath: /var/lib/mysql
             name: vpro-db-data
         ports:
-          - name: vprodb
+          - name: vprodb-port
             containerPort: 3306
         env:
           - name: MYSQL_ROOT_PASSWORD
